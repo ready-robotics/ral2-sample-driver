@@ -1,0 +1,13 @@
+[
+    {
+        "type": "device-configuration",
+        "guid": "ready-ral2-sample-driver",
+        "name": "Sample RAL2 Driver",
+        "vendor": "READY",
+        "vendor-icon": "READY.svg",
+        "description": "Sample RAL2 driver plugin.",
+        "version": "0.1.0",
+        "forgeVersion": "5.5.0",
+        "deviceConfigurations": ["Sample.json"]
+    }
+]

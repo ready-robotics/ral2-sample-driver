@@ -1,0 +1,10 @@
+# For configuration options, see https://www.doxygen.nl/manual/config.html
+
+#---------------------------------------------------------------------------
+# Overridden configuration options
+#---------------------------------------------------------------------------
+
+@INCLUDE               = doxyfile-template
+PROJECT_NAME           = "READY RAL2 Sample Driver"
+PROJECT_BRIEF          = ""
+USE_MDFILE_AS_MAINPAGE = landing-page.md
