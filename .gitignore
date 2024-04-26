@@ -1,0 +1,110 @@
+##### CMake
+CMakeLists.txt.user.*
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+##### C++
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Executables
+*.exe
+*.out
+*.app
+
+##### IDEs
+# Qt Creator
+*.pro.user
+
+# Visual Studio Code
+*.code-workspace
+build/*
+
+# JetBrains
+*.idea
+*.iws
+out/*
+.idea_modules/*
+atlassian-ide-plugin.xml
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Sublime
+.sublime-project
+.sublime-workspace
+
+##### 3D Engine
+*.mesh
+
+##### Robot Viz
+*.urdf
+**/robot-viz
+
+##### Ansible
+*.retry
+ansible/backup
+credentials
+
+##### macOS
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+##### QTCreator
+build-*
+
+# Squish
+*.pyc
+*_vp
