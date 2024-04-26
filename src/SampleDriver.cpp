@@ -116,7 +116,7 @@ void SampleDriver::start(const ral::RequiredSignals & /*unused */)
 
     ral::DriverState driver_state;
     *driver_state.mutable_timestamp() = now;
-    driver_state.set_operational_mode(ral::State::MANUAL_HS);
+    driver_state.set_operational_mode(ral::State::MANUAL_REDUCED);
     driver_state.set_control_mode(ral::State::REMOTE);
     *driver_state.mutable_guide_mode() = {};
     driver_state.set_motion_possible(true);
