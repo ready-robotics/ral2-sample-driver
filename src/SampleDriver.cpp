@@ -191,6 +191,12 @@ void SampleDriver::start(const ral::RequiredSignals & /*unused */)
     emit ready(driver_config);
 }
 
+void SampleDriver::setDriverMode(const ral::SetDriverMode &request)
+{
+    (void)request;
+    emit setDriverModeResult(RequestResult::SUCCEEDED);
+}
+
 void SampleDriver::move(const ral::ContinuousMotion &motion)
 {
     static constexpr int DELAYED_RESULT_MS = 2000;

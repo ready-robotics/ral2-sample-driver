@@ -57,6 +57,7 @@ public:
     SampleDriver(const device::Configuration &configuration, QObject *parent);
 
     void start(const ral::RequiredSignals &required_signals) final;
+    void setDriverMode(const ral::SetDriverMode &request) final;
     void move(const ral::ContinuousMotion &motion) final;
     void setSpeed(const ral2::SpeedFactor &speed) final;
     void stopMotion(const ral::Acceleration &deceleration) final;
