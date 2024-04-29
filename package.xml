@@ -19,5 +19,4 @@
   <depend>shared-library-cpp</depend>
   <depend>ral2-driver</depend>
   <build_depend>robot-configuration</build_depend>
-  <build_depend>robot-viz-tools</build_depend>
 </package>

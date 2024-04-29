@@ -36,55 +36,35 @@
 
 #include <QTimer>
 
+static constexpr int NUM_JOINTS = 6;
+
 static ral::Pose identityPose()
 {
     ral::Pose result;
-
     // No translation
-    result.mutable_translation_mm()->add_data(0.0);
-    result.mutable_translation_mm()->add_data(0.0);
-    result.mutable_translation_mm()->add_data(0.0);
-
+    result.mutable_translation_mm()->mutable_data()->Resize(3, 0.0);
     // Identity quaternion
-    result.mutable_rotation()->add_data(0.0);
-    result.mutable_rotation()->add_data(0.0);
-    result.mutable_rotation()->add_data(0.0);
-    result.mutable_rotation()->add_data(1.0);
-
+    result.mutable_rotation()->mutable_data()->Resize(4, 0.0);
+    result.mutable_rotation()->set_data(3, 1.0);
+    // Empty config
     result.set_config("");
-
     return result;
 }
 
 static ral::Twist zeroTwist()
 {
     ral::Twist result;
-
     // No translation velocity
-    result.mutable_linear_mm_per_s()->add_data(0.0);
-    result.mutable_linear_mm_per_s()->add_data(0.0);
-    result.mutable_linear_mm_per_s()->add_data(0.0);
-
+    result.mutable_linear_mm_per_s()->mutable_data()->Resize(3, 0.0);
     // No rotation velocity
-    result.mutable_angular_rad_per_s()->add_data(0.0);
-    result.mutable_angular_rad_per_s()->add_data(0.0);
-    result.mutable_angular_rad_per_s()->add_data(0.0);
-
+    result.mutable_angular_rad_per_s()->mutable_data()->Resize(3, 0.0);
     return result;
 }
 
 static ral::JointData zeroJointData()
 {
     ral::JointData result;
-
-    // No translation
-    result.add_data(0.0);
-    result.add_data(0.0);
-    result.add_data(0.0);
-    result.add_data(0.0);
-    result.add_data(0.0);
-    result.add_data(0.0);
-
+    result.mutable_data()->Resize(NUM_JOINTS, 0.0);
     return result;
 }
 
@@ -94,19 +74,15 @@ SampleDriver::SampleDriver(const device::Configuration &configuration, QObject *
 
 void SampleDriver::start(const ral::RequiredSignals & /*unused */)
 {
-    static constexpr int NUM_JOINTS = 6;
-    static constexpr auto DIGITAL_INPUT_KEY = "DIN";
-    static constexpr auto DIGITAL_OUTPUT_KEY = "DOUT";
-    static constexpr int NUM_DIGITAL_INPUT = 6;
-    static constexpr int NUM_DIGITAL_OUTPUT = 6;
-
     const auto now = forge::common::utcTime();
 
+    // Spoofed Cartesian state
     ral::CartesianState cartesian_state;
     *cartesian_state.mutable_timestamp() = now;
     *cartesian_state.mutable_pose() = identityPose();
     *cartesian_state.mutable_velocity() = zeroTwist();
 
+    // Spoofed joint state
     ral::JointState joint_state;
     *joint_state.mutable_timestamp() = now;
     *joint_state.mutable_position() = zeroJointData();
@@ -114,6 +90,7 @@ void SampleDriver::start(const ral::RequiredSignals & /*unused */)
     *joint_state.mutable_effort() = zeroJointData();
     emit armStateChanged(cartesian_state, joint_state);
 
+    // Spoofed driver state
     ral::DriverState driver_state;
     *driver_state.mutable_timestamp() = now;
     driver_state.set_operational_mode(ral::State::MANUAL_REDUCED);
@@ -128,31 +105,12 @@ void SampleDriver::start(const ral::RequiredSignals & /*unused */)
     driver_state.set_safety_override(ral::State::NONE);
     emit controllerStateChanged(driver_state);
 
+    // Spoofed driver configuration
     ral::DriverConfiguration driver_config;
     driver_config.set_controller_model("RCU");
     driver_config.set_robot_model("READY-5.0");
 
-    // io_configurationuration
-    auto &io_configuration = *driver_config.mutable_io_configuration();
-    static constexpr auto set_digital_io =
-        +[](const char *key, ral::IOType io_type, int count, ral::DigitalEntry &signal) {
-            signal.mutable_signal()->set_key(key);
-            signal.mutable_signal()->set_type(io_type);
-            signal.mutable_signal()->set_count(count);
-            signal.mutable_signal()->set_start_index(1);
-        };
-    set_digital_io(DIGITAL_INPUT_KEY,
-                   ral::IOType::INPUT,
-                   NUM_DIGITAL_INPUT,
-                   *io_configuration.mutable_digital()->Add());
-    set_digital_io(DIGITAL_OUTPUT_KEY,
-                   ral::IOType::OUTPUT,
-                   NUM_DIGITAL_OUTPUT,
-                   *io_configuration.mutable_digital()->Add());
-    // analog null
-    io_configuration.set_mismatch(false);
-
-    // joint_limits
+    // Joint limits.
     auto &joint_limits = *driver_config.mutable_joint_limits();
     joint_limits.Reserve(NUM_JOINTS);
     static constexpr auto set_joint_limit = +[](const char *name, ral::JointLimit &limit) {

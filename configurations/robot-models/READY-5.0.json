@@ -2,7 +2,7 @@
     "max-payload-mass-kg": 5.0,
     "max-com-offset-mm": [330.0, 330.0, 410.0],
     "max-tcp-offset-mm": [809.0, 809.0, 809.0],
-    "joint-aliases": ["J1", "J2", "J3", "J4", "J4", "J6"],
+    "joint-aliases": ["J1", "J2", "J3", "J4", "J5", "J6"],
     "cartesian-velocity": {
         "units": "mm",
         "range": {

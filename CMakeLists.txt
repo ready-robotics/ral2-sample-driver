@@ -21,7 +21,6 @@ set(RR_CATKIN_DEPS
   ral-messages
   ral2-driver
   robot-configuration
-  robot-viz-tools
 )
 
 # Find all CMake packages
