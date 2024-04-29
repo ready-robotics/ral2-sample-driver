@@ -8,6 +8,14 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Robot Controller Disconnected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TODO: Add custom disconnected fault handling message or remove `disconnected-fault-override-code from the controller configuration JSON file .</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Refer to the OEM pendant for more information on the active warnings and errors.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -34,14 +42,6 @@
     <message>
         <source>__always_translated_string__</source>
         <translation></translation>
-    </message>
-    <message>
-        <source>Robot Controller Disconnected</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Custom disconnected fault handling message.</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
