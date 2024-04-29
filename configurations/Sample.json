@@ -4,8 +4,8 @@
     },
     "attributes": {
         "robot-driver-library": "libral2-sample-driver.so",
-        "jog-controllers.cartesian.library": "libopen-loop-cartesian-iterative-position.so",
-        "jog-controllers.cartesian.jog-frame": "ENDPOINT",
+        "jog-controllers.cartesian.library": "libopen-loop-cartesian-velocity-forwarder.so",
+        "jog-controllers.cartesian.jog-frame": "TCP",
         "jog-controllers.joint.library": "libopen-loop-joint-velocity-forwarder.so",
         "validate-messages": true,
         "raise-faults-on-controller-software-mismatch": false,
