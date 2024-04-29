@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ral2-sample-driver</name>
+  <version>0.0.0</version>
+  <description>RAL2 Sample Robot Driver for ForgeOS</description>
+  <author email="software.engineers@ready-robotics.com">READY Robotics</author>
+  <maintainer email="software.engineers@ready-robotics.com">READY Robotics</maintainer>
+  <url type="repository">https://github.com/ready-robotics/ral2-sample-driver</url>
+  <license>Proprietary</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>device-abstraction-layer</build_depend>
+  <build_depend>device-tools</build_depend>
+  <build_depend>package-manager-utils</build_depend>
+  <depend>forge-core-common</depend>
+  <depend>forge-core-logger-cpp</depend>
+  <depend>robot-abstraction-layer</depend>
+  <depend>robot-abstraction-layer-utils</depend>
+  <depend>ral-messages</depend>
+  <depend>shared-library-cpp</depend>
+  <depend>ral2-driver</depend>
+  <build_depend>robot-configuration</build_depend>
+</package>

@@ -1,0 +1,17 @@
+{
+    "motion-exec-types": ["VEL", "ACC_VEL", "TIME"],
+    "standard-tool-orientation-values": ["ALIGN_TO_END_IGNORE_INTERMEDIATE"],
+    "prefer-cartesian-targets": true,
+    "is-keyless": true,
+    "robot-reduced-is-program": true,
+    "disconnected-fault-override-code": 100000,
+    "pose-config-regex": ".*",
+    "set-on-motion-start-signal-count": {
+        "analog": 2,
+        "digital": 24
+    },
+    "set-on-motion-complete-signal-count": {
+        "analog": 2,
+        "digital": 24
+    }
+}

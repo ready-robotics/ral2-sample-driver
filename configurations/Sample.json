@@ -1,0 +1,88 @@
+{
+    "device": {
+        "name": "RAL2 Sample Driver"
+    },
+    "attributes": {
+        "robot-driver-library": "libral2-sample-driver.so",
+        "jog-controllers.cartesian.library": "libopen-loop-cartesian-velocity-forwarder.so",
+        "jog-controllers.cartesian.jog-frame": "TCP",
+        "jog-controllers.joint.library": "libopen-loop-joint-velocity-forwarder.so",
+        "validate-messages": true,
+        "raise-faults-on-controller-software-mismatch": false,
+        "reject-messages-when-disconnected": true,
+        "check-robot-model-mismatch": true,
+        "controller.RCU.supported-robot-models": [
+            "READY-5.0"
+        ],
+        "controller.RCU.safety-configuration": ["Program Mode"],
+        "configurationTimeoutMS": 30000
+    },
+    "attribute-list": [
+        {
+            "name": "robot",
+            "type": "ARRAY",
+            "attributes": [
+                {
+                    "name": "model",
+                    "type": "STRING",
+                    "values": [
+                        "READY-5.0"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "controller",
+            "type": "ARRAY",
+            "attributes": [
+                {
+                    "name": "model",
+                    "type": "STRING",
+                    "values": ["RCU"]
+                },
+                {
+                    "name": "RCU",
+                    "type": "ARRAY",
+                    "description": "READY Control Unit.",
+                    "visible": false,
+                    "attributes": [
+                        {
+                            "name": "supported-robot-models",
+                            "type": "STRING",
+                            "description": "The supported robot models for the RCU control unit.",
+                            "list": true,
+                            "visible": false
+                        },
+                        {
+                            "name": "safety-configuration",
+                            "type": "STRING",
+                            "description": "The safety configurations for the RCU control unit.",
+                            "list": true,
+                            "visible": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "package": "ready-ral2-service",
+    "faults": [
+        {
+            "context": "ready-ral2-sample-driver",
+            "modes": ["DISCONNECTED", "TEACH", "TEACH (DISABLED)", "RUN", "TEST"],
+            "fallback": "Refer to the OEM pendant for more information on the active warnings and errors.",
+            "notification": [],
+            "warning": [
+            ],
+            "fault": [
+                {
+                    "code": 100000,
+                    "subject": "Robot Controller Disconnected",
+                    "body": "TODO: Add custom disconnected fault handling message or remove `disconnected-fault-override-code from the controller configuration JSON file .",
+                    "notification": true,
+                    "persistent-border": false
+                }
+            ]
+        }
+    ]
+}
