@@ -35,5 +35,13 @@
         <source>__always_translated_string__</source>
         <translation></translation>
     </message>
+    <message>
+        <source>Robot Controller Disconnected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom disconnected fault handling message.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

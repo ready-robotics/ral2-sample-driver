@@ -75,6 +75,13 @@
             "warning": [
             ],
             "fault": [
+                {
+                    "code": 100000,
+                    "subject": "Robot Controller Disconnected",
+                    "body": "Custom disconnected fault handling message.",
+                    "notification": true,
+                    "persistent-border": false
+                }
             ]
         }
     ]
