@@ -10,6 +10,7 @@
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>device-abstraction-layer</build_depend>
   <build_depend>device-tools</build_depend>
+  <build_depend>open-loop-jog-controllers</build_depend>
   <build_depend>package-manager-utils</build_depend>
   <depend>forge-core-common</depend>
   <depend>forge-core-logger-cpp</depend>
