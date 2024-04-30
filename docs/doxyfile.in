@@ -8,3 +8,7 @@
 PROJECT_NAME           = "READY RAL2 Sample Driver"
 PROJECT_BRIEF          = ""
 USE_MDFILE_AS_MAINPAGE = landing-page.md
+TAGFILES               = ../../ral2-driver/docs/ral2-driver.tag=../../../../ral2-driver/docs/doxygen/html \
+                         ../../ral-messages/docs/ral-messages.tag=../../../../ral-messages/docs/doxygen/html \
+                         ../../robot-configuration/docs/robot-configuration.tag=../../../../robot-configuration/docs/doxygen/html \
+                         ../../open-loop-jog-controllers/docs/open-loop-jog-controllers.tag=../../../../open-loop-jog-controllers/docs/doxygen/html
