@@ -6,7 +6,7 @@ visualization, and device package details.
 ## Introduction
 
 The code in this repository is meant to serve only as a basis for implementing the functionality of a ForgeOS robot driver. The
-ready::SampleDriver class implementation stubs all of functions and emits all of the Qt signals necessary to get the
+ready::SampleDriver class implementation stubs all necessary functions and emits all of the Qt signals necessary to get the
 robot driver implementation to compile, install, configure, and run in ForgeOS. Using this implementation permits
 relatively quick iteration of the robot driver using ForgeOS applications to incrementally verify the implemented
 behaviors.
