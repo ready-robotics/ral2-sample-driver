@@ -51,7 +51,7 @@ point.
 
 ### configurations/robot-models/*.json
 
-Each of the .json files in the robot-models directory corresponds to settings for a specific robot model. Adding and
+Each of the .json files in the robot-models directory correspond to settings for a specific robot model. Adding and
 removing these files will require changes to CMakeLists.txt and the following attributes in "configuration/Sample.json":
 
 * controller.*.supported-robot-models
