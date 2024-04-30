@@ -60,7 +60,7 @@ removing these files requires changes to CMakeLists.txt and the following attrib
 ### configurations/controller-models/*/*.json
 
 Each of the .json files in the controller-models directory tree correspond to a specific operating mode for a
-controller. Adding and removing these files/directories will require changes to CMakeLists.txt and the following
+controller. Adding and removing these files/directories requires changes to CMakeLists.txt and the following
 attributes in the "configuration/Sample.json":
 
 * controller.*.supported-robot-models
