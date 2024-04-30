@@ -1,6 +1,6 @@
 # READY RAL2 Sample Driver
 
-This repository contains a sample ral2-driver implementation for ForgeOS and meta-data including its configuration,
+This repository contains a sample ral2-driver implementation for ForgeOS and metadata including its configuration,
 visualization, and device package details.
 
 ## Introduction
