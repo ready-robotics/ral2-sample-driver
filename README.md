@@ -70,7 +70,7 @@ attributes in the "configuration/Sample.json":
 
 ### Manifest.json
 
-The manifest.json file is used to describe the ForgeOS device package. The following fields will need to be updated:
+The manifest.json file is used to describe the ForgeOS device package. The following fields need to be updated:
 * "guid" -- This field is a globally unique string identifying the package in ForgeOS. The value is typically of the form "ready-ral-<robot-vendor>-driver"
 * "name" -- This field is the name of the device package.
 * "vendor" -- This is the vendor of the package. For robot drivers this typically maps to the robot vendor name.
